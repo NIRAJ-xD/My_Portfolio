@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1></h1>
+    <h1> MY PORTFOLIO</h1>
+    <div>
+        <input type="button"value="search">
+    </div>
 </body>
 </html>
