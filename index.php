@@ -29,7 +29,7 @@
                     <div class="hero-text">
                         <h1>Hello</h1>
                             <h2>I'm Niraj Gour</h2>
-                            <img src="photo.jpeg" class="image" alt="Niraj's photo">
+                            <img src="profile.png" class="image" alt="Niraj's photo">
                         <p>A Web Developer | Python, Java & PHP</p>
                         <p>Enthusiast</p>
                     </div>

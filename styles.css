@@ -127,10 +127,9 @@ html {
 .image {
   width: 200px;
   height: 200px;
-  border-radius: 50%;
   object-fit: cover;
-  border: 8px solid transparent;
-  background: transparent;
+  border: 0px solid transparent;
+  background-color: transparent;
 }
   
   
