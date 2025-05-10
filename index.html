@@ -15,13 +15,12 @@
         <header>
             <nav>
                 <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</div>
-                    <ul class="nav-links" id="navLinks">
-                        <li><a href="#hero">🏠 Home</a></li>
-                        <li><a href="#about">👤 About</a></li>
-                        <li><a href="#socials">🔗 Socials</a></li>
-                    </ul>
+                <ul class="nav-links" id="navLinks">
+                  <li><a href="#hero">🏠 Home</a></li>
+                  <li><a href="#about">👤 About</a></li>
+                  <li><a href="#socials">🔗 Socials</a></li>
+                </ul>
             </nav>
-
 
         </header>
             <section class="hero">
@@ -42,8 +41,12 @@
                 <p>
                     I have a strong foundation in Python and Java, and I’m currently focused on full-stack web development. I love building responsive  websites, exploring backend technologies, and solving coding challenges.
                 <div>
-                    <button> Download Resume</button>
-                    <button> Hire ME</button>
+                    <a href="NIraj_Resume.pdf" download>
+                        <button>Download Resume</button>
+                    </a>
+                    <a href="https://wa.me/91786588738" target="_blank">
+                        <button>Hire Me</button>
+                    </a>
                 </div>
             </section>
             <section class="socials">
@@ -55,19 +58,22 @@
                 <p>© 2025 Niraj Gour. Built with ❤️ JAVA, CSS & HTML</p>
             </footer>
         <script>
+            // Toggle the "active" class to show/hide the menu on smaller screens
             function toggleMenu() {
-                const nav = document.getElementById("navLinks");
-                const icon = document.getElementById("menuToggle");
+            const navLinks = document.getElementById('navLinks');
 
-                nav.classList.toggle("active");
+            // Toggle the 'active' class
+            navLinks.classList.toggle('active');
 
-                // Toggle hamburger to X
-                if (nav.classList.contains("active")) {
-                    icon.textContent = "✖"; // X icon
-                } else {
-                    icon.textContent = "☰"; // Hamburger
-                }
+            // Optional: Close menu when a link is clicked (for better UX on mobile)
+            const links = navLinks.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                });
+            });
             }
+
         </script>
 
     </body>

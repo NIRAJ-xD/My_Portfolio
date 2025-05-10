@@ -11,88 +11,123 @@ html {
   
   body {
     line-height: 1.6;
-    background-color: transparent;
-    color: #333;
+    background-color: #333333;
+    color: #f0f0f0;
   }
   
   /* Navbar */
-/* Responsive Navbar */
-@media (max-width:991px) {
+/* Base Navbar Styles */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #333;
+}
+
+/* For screens max-width 991px (Tablets and smaller devices) */
+@media (max-width: 991px) {
   nav {
     flex-wrap: wrap;
     justify-content: flex-start;
   }
 
+  /* Menu Toggle Button (Hamburger) */
   .menu-toggle {
     display: block;
     margin-right: 1rem;
-    color: white;
+    color: #ff7043;
     font-size: 30px;
+    cursor: pointer;
   }
 
+  /* Links - Initially hidden */
   .nav-links {
     display: none;
-    flex-direction: row;
+    flex-direction: column; /* Stack the links vertically for smaller screens */
     gap: 1rem;
-    width: auto;
     background-color: transparent;
     padding: 0.5rem 0.5rem;
-    gap: 5rem;
+    width: 100%;
+    align-items: center;
   }
 
+  /* Display links when 'active' class is added */
   .nav-links.active {
     display: flex;
   }
+
+  /* Style for Navbar Links */
   .nav-links a {
     color: white;
-    text-decoration: none; /* removes underline */
+    text-decoration: none;
     font-weight: bold;
+    padding: 0.5rem 1rem;
+    display: block; /* Make links block-level so they stack properly */
   }
-  
+
   .nav-links a:visited {
-    color: white; /* ensures visited links don’t turn purple */
+    color: white;
   }
-  
+
   .nav-links a:hover,
   .nav-links a:focus {
-    color: #00c1cf; /* optional hover color */
+    color: #00c1cf; /* Hover Color */
     text-decoration: none;
   }
-  
 }
-@media (min-width: 992px){
+
+/* For screens 992px and above (Desktop) */
+@media (min-width: 992px) {
+  /* Menu Toggle Button (Hamburger) for all screen sizes (always visible) */
   .menu-toggle {
-    display: block;
+    display: block; /* Always visible */
     margin-right: 3rem;
     color: white;
     font-size: 30px;
+    cursor: pointer;
   }
 
+  /* Nav Links for large screens - Horizontal layout */
   .nav-links {
-    display: none;
-    flex-direction: row;
-    width: auto;
-    background-color: transparent;
-    padding: 0.5rem 4em;
-    gap: 30rem;
+    display: flex;
+    flex-direction: row; /* Horizontal layout */
+    justify-content: space-between; /* Space out the links */
+    width: 100%;
+    padding: 0.5rem 2rem; /* Adjust padding */
   }
 
-  .nav-links.active {
-    display: flex;
+  /* Align Home to left, About to center, Socials to right */
+  .nav-links li:nth-child(1) {
+    text-align: left;
+    flex: 1;
   }
+
+  .nav-links li:nth-child(2) {
+    text-align: center;
+    flex-grow: 1;
+  }
+
+  .nav-links li:nth-child(3) {
+    text-align: right;
+    flex: 1;
+  }
+
+  /* Navbar Links Style */
   .nav-links a {
     color: white;
-    text-decoration: none; /* removes underline */
+    text-decoration: none;
     font-weight: bold;
+    padding: 0.5rem 1rem;
   }
 
   .nav-links a:visited {
-    color: white; /* ensures visited links don’t turn purple */
+    color: white;
   }
 
   .nav-links a:hover,
   .nav-links a:focus {
-    color: #00c1cf; /* optional hover color */
+    color: #00c1cf; /* Hover color */
     text-decoration: none;
   }
 }
