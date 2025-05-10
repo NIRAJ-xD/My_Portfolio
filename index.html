@@ -57,24 +57,26 @@
             <footer>
                 <p>© 2025 Niraj Gour. Built with ❤️ JAVA, CSS & HTML</p>
             </footer>
-        <script>
-            // Toggle the "active" class to show/hide the menu on smaller screens
-            function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-
-            // Toggle the 'active' class
-            navLinks.classList.toggle('active');
-
-            // Optional: Close menu when a link is clicked (for better UX on mobile)
-            const links = navLinks.querySelectorAll('a');
-            links.forEach(link => {
-                link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                });
-            });
-            }
-
-        </script>
-
+            <script>
+                function toggleMenu() {
+                    const navLinks = document.getElementById('navLinks');
+            
+                    // Toggle the 'active' class to show/hide the menu
+                    navLinks.classList.toggle('active');
+            
+                    // Remove previous event listeners to avoid duplicates
+                    const newNavLinks = navLinks.cloneNode(true);
+                    navLinks.parentNode.replaceChild(newNavLinks, navLinks);
+            
+                    // Re-add event listeners for closing on click
+                    const links = newNavLinks.querySelectorAll('a');
+                    links.forEach(link => {
+                        link.addEventListener('click', () => {
+                            newNavLinks.classList.remove('active');
+                        });
+                    });
+                }
+            </script>
+            
     </body>
 </html>

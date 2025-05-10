@@ -1,22 +1,21 @@
-/* Reset & font */
+/* Reset & Font */
 html {
   scroll-behavior: smooth;
 }
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-  }
-  
-  body {
-    line-height: 1.6;
-    background-color: #333333;
-    color: #f0f0f0;
-  }
-  
-  /* Navbar */
-/* Base Navbar Styles */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  background-color: #333333;
+  color: #f0f0f0;
+}
+
+/* Navbar */
 nav {
   display: flex;
   justify-content: space-between;
@@ -25,80 +24,54 @@ nav {
   background-color: #333;
 }
 
-/* For screens max-width 991px (Tablets and smaller devices) */
-@media (max-width: 991px) {
-  nav {
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-
-  /* Menu Toggle Button (Hamburger) */
-  .menu-toggle {
-    display: block;
-    margin-right: 1rem;
-    color: #ff7043;
-    font-size: 30px;
-    cursor: pointer;
-  }
-
-  /* Links - Initially hidden */
-  .nav-links {
-    display: none;
-    flex-direction: column; /* Stack the links vertically for smaller screens */
-    gap: 1rem;
-    background-color: transparent;
-    padding: 0.5rem 0.5rem;
-    width: 100%;
-    align-items: center;
-  }
-
-  /* Display links when 'active' class is added */
-  .nav-links.active {
-    display: flex;
-  }
-
-  /* Style for Navbar Links */
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    display: block; /* Make links block-level so they stack properly */
-  }
-
-  .nav-links a:visited {
-    color: white;
-  }
-
-  .nav-links a:hover,
-  .nav-links a:focus {
-    color: #00c1cf; /* Hover Color */
-    text-decoration: none;
-  }
+/* Menu toggle button (always visible) */
+.menu-toggle {
+  display: block;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  margin-right: 1rem;
 }
 
-/* For screens 992px and above (Desktop) */
+/* Nav links - hidden by default */
+.nav-links {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem;
+}
+
+/* Show links when active */
+.nav-links.active {
+  display: flex;
+}
+
+/* Nav link styles */
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  display: block;
+}
+.nav-links a:visited {
+  color: white;
+}
+.nav-links a:hover,
+.nav-links a:focus {
+  color: #00c1cf;
+}
+
+/* Desktop styles */
 @media (min-width: 992px) {
-  /* Menu Toggle Button (Hamburger) for all screen sizes (always visible) */
-  .menu-toggle {
-    display: block; /* Always visible */
-    margin-right: 3rem;
-    color: white;
-    font-size: 30px;
-    cursor: pointer;
+  .nav-links.active {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5rem 2rem;
   }
 
-  /* Nav Links for large screens - Horizontal layout */
-  .nav-links {
-    display: flex;
-    flex-direction: row; /* Horizontal layout */
-    justify-content: space-between; /* Space out the links */
-    width: 100%;
-    padding: 0.5rem 2rem; /* Adjust padding */
-    display: none;
-  }
-
-  /* Align Home to left, About to center, Socials to right */
   .nav-links li:nth-child(1) {
     text-align: left;
     flex: 1;
@@ -113,31 +86,13 @@ nav {
     text-align: right;
     flex: 1;
   }
-
-  /* Navbar Links Style */
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-  }
-
-  .nav-links a:visited {
-    color: white;
-  }
-
-  .nav-links a:hover,
-  .nav-links a:focus {
-    color: #00c1cf; /* Hover color */
-    text-decoration: none;
-  }
 }
 
-  /* Hero */
+/* Hero Section */
 .hero {
   height: 100vh;
   background: linear-gradient(rgba(18, 20, 38, 0.6), rgba(18, 20, 38, 0.6)),
-  url('https://images.unsplash.com/photo-1498050108023-c5249f4df085') center/cover no-repeat;
+    url('https://images.unsplash.com/photo-1498050108023-c5249f4df085') center/cover no-repeat;
   background-attachment: fixed;
   display: flex;
   align-items: center;
@@ -146,8 +101,6 @@ nav {
   text-align: center;
   padding: 0 20px;
 }
-  
-  
 .hero-content {
   display: flex;
   align-items: center;
@@ -155,20 +108,15 @@ nav {
   max-width: 1000px;
   width: 100%;
 }
-  
 .hero-text {
   flex: 1;
 }
-  
 .image {
   width: 200px;
   height: 200px;
   object-fit: cover;
-  border: 0px solid transparent;
   background-color: transparent;
 }
-  
-  
 .hero h1 {
   font-size: 5em;
   padding: 1rem 0;
@@ -177,12 +125,11 @@ nav {
   font-size: 3em;
   padding: 1rem 0;
 }
-  
 .hero p {
-  font-size: 2rem
+  font-size: 2rem;
 }
-  
-/* About */
+
+/* About Section */
 .about {
   font: 1em roboto, sans-serif;
   padding: 2rem;
@@ -191,20 +138,22 @@ nav {
   margin: auto;
   color: white;
 }
-  
+
 /* Socials */
 .socials {
   text-align: center;
-  padding: 1 rem;
+  padding: 1rem;
   color: white;
 }
-  
 .socials i {
   font-size: 1.5rem;
   margin: 0 1rem;
   color: white;
 }
-  
+.fab.fa-whatsapp {
+  color: rgb(4, 189, 84);
+}
+
 /* Footer */
 footer {
   background-color: #222;
@@ -212,23 +161,26 @@ footer {
   text-align: center;
   padding: 0.5rem;
 }
-.full{
-  background-color: rgb(44, 44, 44);
-}
+
+/* Button Styles */
 button {
   padding: 10px 20px;
   background-color: #00c1cf;
   color: white;
   border: none;
-  border-radius: 50x;
+  border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
-  
 button:hover {
   background-color: #007780;
   transform: scale(1.1);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Background class */
+.full {
+  background-color: rgb(44, 44, 44);
 }
 .fab.fa-whatsapp {
   color: rgb(4, 189, 84);
