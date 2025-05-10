@@ -95,6 +95,7 @@ nav {
     justify-content: space-between; /* Space out the links */
     width: 100%;
     padding: 0.5rem 2rem; /* Adjust padding */
+    display: none;
   }
 
   /* Align Home to left, About to center, Socials to right */
