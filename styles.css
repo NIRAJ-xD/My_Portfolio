@@ -229,8 +229,8 @@ button:hover {
   transform: scale(1.1);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-.fab.fa-youtube {
-  color: red;
+.fab.fa-whatsapp {
+  color: rgb(0, 165, 71);
 }
   
   
