@@ -14,7 +14,9 @@
     <body class="full">
         <header>
             <nav>
-                <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</div>
+                <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+                    <span id="toggleIcon">☰</span>
+                </div>
                 <ul class="nav-links" id="navLinks">
                   <li><a href="#hero">🏠 Home</a></li>
                   <li><a href="#about">👤 About</a></li>
@@ -59,24 +61,30 @@
             </footer>
             <script>
                 function toggleMenu() {
-                    const navLinks = document.getElementById('navLinks');
-            
-                    // Toggle the 'active' class to show/hide the menu
-                    navLinks.classList.toggle('active');
-            
-                    // Remove previous event listeners to avoid duplicates
-                    const newNavLinks = navLinks.cloneNode(true);
-                    navLinks.parentNode.replaceChild(newNavLinks, navLinks);
-            
-                    // Re-add event listeners for closing on click
-                    const links = newNavLinks.querySelectorAll('a');
-                    links.forEach(link => {
-                        link.addEventListener('click', () => {
-                            newNavLinks.classList.remove('active');
-                        });
+                  const navLinks = document.getElementById('navLinks');
+                  const toggleIcon = document.getElementById('toggleIcon');
+              
+                  navLinks.classList.toggle('active');
+              
+                  // Switch icon between ☰ and ✖
+                  if (navLinks.classList.contains('active')) {
+                    toggleIcon.textContent = '✖';
+                  } else {
+                    toggleIcon.textContent = '☰';
+                  }
+              
+                  // Remove previous listeners and reattach close-on-click
+                  const newNavLinks = navLinks.cloneNode(true);
+                  navLinks.parentNode.replaceChild(newNavLinks, navLinks);
+              
+                  const links = newNavLinks.querySelectorAll('a');
+                  links.forEach(link => {
+                    link.addEventListener('click', () => {
+                      newNavLinks.classList.remove('active');
+                      document.getElementById('toggleIcon').textContent = '☰'; // Reset icon when link is clicked
                     });
+                  });
                 }
             </script>
-            
     </body>
 </html>
