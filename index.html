@@ -3,88 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <meta name="description" content="Portfolio of Niraj Gour, Web Developer specializing in Python, Java & PHP">
+    <title>Niraj Gour | Web Developer</title>
     <link rel="icon" href="icon.png" type="image/png">
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style">
+    <!-- Consolidated font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 </head>
-    <body class="full">
-        <header>
-            <nav>
-                <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
-                    <span id="toggleIcon">☰</span>
-                </div>
-                <ul class="nav-links" id="navLinks">
-                  <li><a href="#hero">🏠 Home</a></li>
-                  <li><a href="#about">👤 About</a></li>
-                  <li><a href="#socials">🔗 Socials</a></li>
-                </ul>
-            </nav>
+<body class="full">
+    <header>
+        <nav class="navbar">
+            <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="Toggle navigation">
+                <span id="toggleIcon">☰</span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
+                <li><a href="#socials"><i class="fas fa-share-alt"></i> Connect</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        </header>
-            <section class="hero">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h1>Hello</h1>
-                            <h2>I'm Niraj Gour</h2>
-                            <img src="profile.png" class="image" alt="Niraj's photo">
-                        <p>A Web Developer | Python, Java & PHP</p>
-                        <p>Enthusiast</p>
-                    </div>
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="animate__animated animate__fadeInDown">Hello World!</h1>
+                <h2 class="animate__animated animate__fadeIn animate__delay-1s">I'm Niraj Gour</h2>
+                <div class="profile-image-container">
+                    <img src="profile.png" class="profile-image" alt="Niraj Gour - Web Developer">
                 </div>
-            </section>
-            <section class="about">
+                <div class="typing-container">
+                    <p class="typing-text">A <span id="typing"></span><span class="cursor">|</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <a href="#about"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
                 <p>
-                    Hi! I'm Niraj Gour, a passionate and self-motivated web developer currently learning and building projects in HTML, CSS, JavaScript,   and PHP. I enjoy turning complex problems into simple, beautiful, and intuitive designs.
+                    Hi! I'm Niraj Gour, a passionate and self-motivated web developer currently learning and building projects in HTML, CSS, JavaScript, and PHP. I enjoy turning complex problems into simple, beautiful, and intuitive designs.
                 </p>
                 <p>
-                    I have a strong foundation in Python and Java, and I’m currently focused on full-stack web development. I love building responsive  websites, exploring backend technologies, and solving coding challenges.
-                <div>
-                    <a href="NIraj_Resume.pdf" download>
-                        <button>Download Resume</button>
+                    With a strong foundation in Python and Java, I'm focused on full-stack web development. I love building responsive websites, exploring backend technologies, and solving coding challenges.
+                </p>
+                <div class="cta-buttons">
+                    <a href="NIraj_Resume.pdf" download class="btn btn-primary">
+                        <i class="fas fa-download"></i> Download Resume
                     </a>
-                    <a href="https://wa.me/917865884738" target="_blank">
-                        <button>Hire Me</button>
+                    <a href="https://wa.me/917865884738" target="_blank" class="btn btn-secondary">
+                        <i class="fas fa-paper-plane"></i> Hire Me
                     </a>
                 </div>
-            </section>
-            <section class="socials">
-                <a href="https://wa.me/917865884738" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://github.com/NIRAJ-xDS" target="_blank"><i class="fab fa-github"></i></a>
-                <p>Get in touch</p>
-            </section>
-            <footer>
-                <p>© 2025 Niraj Gour. Built with ❤️ JAVA, CSS & HTML</p>
-            </footer>
-            <script>
-                function toggleMenu() {
-                  const navLinks = document.getElementById('navLinks');
-                  const toggleIcon = document.getElementById('toggleIcon');
-              
-                  navLinks.classList.toggle('active');
-              
-                  // Switch icon between ☰ and ✖
-                  if (navLinks.classList.contains('active')) {
-                    toggleIcon.textContent = '✖';
-                  } else {
-                    toggleIcon.textContent = '☰';
-                  }
-              
-                  // Remove previous listeners and reattach close-on-click
-                  const newNavLinks = navLinks.cloneNode(true);
-                  navLinks.parentNode.replaceChild(newNavLinks, navLinks);
-              
-                  const links = newNavLinks.querySelectorAll('a');
-                  links.forEach(link => {
-                    link.addEventListener('click', () => {
-                      newNavLinks.classList.remove('active');
-                      document.getElementById('toggleIcon').textContent = '☰'; // Reset icon when link is clicked
-                    });
-                  });
-                }
-            </script>
-    </body>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2>My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="fab fa-html5"></i>
+                    <h3>HTML5</h3>
+                    <div class="skill-bar">
+                        <div class="skill-level html"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-css3-alt"></i>
+                    <h3>CSS3</h3>
+                    <div class="skill-bar">
+                        <div class="skill-level css"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-js"></i>
+                    <h3>JavaScript</h3>
+                    <div class="skill-bar">
+                        <div class="skill-level js"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-python"></i>
+                    <h3>Python</h3>
+                    <div class="skill-bar">
+                        <div class="skill-level python"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-java"></i>
+                    <h3>Java</h3>
+                    <div class="skill-bar">
+                        <div class="skill-level java"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-php"></i>
+                    <h3>PHP</h3>
+                    <div class="skill-bar">
+                        <div class="skill-level php"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="socials" id="socials">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <div class="social-icons">
+                <a href="https://wa.me/917865884738" target="_blank" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://github.com/NIRAJ-xDS" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:itznirajgour@gmail.com" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="#" aria-label="LinkedIn (coming soon)">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+            <p>Feel free to reach out for collaborations or just to say hi!</p>
+        </div>s
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Niraj Gour. Built with <i class="fas fa-heart"></i> and <i class="fas fa-code"></i></p>
+            <p class="small">Java, CSS & HTML</p>
+        </div>
+    </footer>
+
+    <!-- Add Animate.css for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="script.js"></script>
+</body>
 </html>
