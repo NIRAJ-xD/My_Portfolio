@@ -3,68 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Niraj Gour, Web Developer specializing in Python, Java & PHP">
-    <title>Niraj Gour | Web Developer</title>
-    <link rel="icon" href="icon.png" type="image/png">
-    <!-- Preload critical resources -->
-    <link rel="preload" href="styles.css" as="style">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style">
-    <!-- Consolidated font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="My Portfolio - A showcase of my skills and projects.">
+    <title>Portfolio</title>
+    <link rel="icon" href="/images/icon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <script src="/JS/script.js" defer></script>
 </head>
-<body class="full">
-    <header>
+<body>
+    <header class="header">
         <nav class="navbar">
-            <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="Toggle navigation">
-                <span id="toggleIcon">☰</span>
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/NIRAJ.png" alt="NIRAJ">
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <ul>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li>
+                            <a href="#">Skills</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contact-btn">
+                    <a class="btn" href="mailto:itznirajgour@gmail.com" target="_blank">
+                        <i class="fas fa-phone"></i> Contact Me
+                    </a>
+                </div>
+                <div class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#hero"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
-                <li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
-                <li><a href="#socials"><i class="fas fa-share-alt"></i> Connect</a></li>
-            </ul>
         </nav>
     </header>
-
-    <section class="hero" id="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="animate__animated animate__fadeInDown">Hello World!</h1>
-                <h2 class="animate__animated animate__fadeIn animate__delay-1s">I'm Niraj Gour</h2>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hello, i'm</h1>
+                <h2 class="glow-text">Niraj Gour</h2>
                 <div class="profile-image-container">
-                    <img src="profile.png" class="profile-image" alt="Niraj Gour - Web Developer">
+                    <img src="/images/logo.png" class="profile-image" alt="Niraj Gour - Web Developer">
                 </div>
-                <div class="typing-container">
-                    <p class="typing-text">A <span id="typing"></span><span class="cursor">|</span></p>
+                <p>A Web Developer</p>
+                <div class="cta-buttons">
+                    <a href="NIraj_Resume.pdf" class="btn" id="resume-btn" download>
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                    <a href="https://wa.me/917865884738" target="_blank" class="btn" id="hire-btn">
+                        <i class="fas fa-paper-plane"></i> Hire Me
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="scroll-down">
-            <a href="#about"><i class="fas fa-chevron-down"></i></a>
-        </div>
     </section>
-
     <section class="about" id="about">
         <div class="container">
             <h2>About Me</h2>
             <div class="about-content">
                 <p>
-                    Hi! I'm Niraj Gour, a passionate and self-motivated web developer currently learning and building projects in HTML, CSS, JavaScript, and PHP. I enjoy turning complex problems into simple, beautiful, and intuitive designs.
+                    Hi! I’m  <span class="highlight">Niraj Gour</span>, a passionate and self-motivated web developer currently expanding my skills through hands-on projects using <span class="highlight">HTML</span>, <span class="highlight">CSS</span>,  <span class="highlight">JavaScript</span>, and  <span class="highlight">PHP</span>. I enjoy breaking down complex problems into clean, user-friendly solutions with a focus on functionality and design.
                 </p>
                 <p>
-                    With a strong foundation in Python and Java, I'm focused on full-stack web development. I love building responsive websites, exploring backend technologies, and solving coding challenges.
+                    With a solid foundation in  <span class="highlight">Python</span> and  <span class="highlight">Java</span>, I’m actively pursuing  <span class="highlight">full-stack development</span>. I’m eager to contribute to real-world projects, collaborate with experienced teams, and continue learning through practical experience in a professional environment.
                 </p>
-                <div class="cta-buttons">
-                    <a href="NIraj_Resume.pdf" download class="btn btn-primary">
-                        <i class="fas fa-download"></i> Download Resume
-                    </a>
-                    <a href="https://wa.me/917865884738" target="_blank" class="btn btn-secondary">
-                        <i class="fas fa-paper-plane"></i> Hire Me
-                    </a>
-                </div>
             </div>
         </div>
     </section>
@@ -115,6 +132,13 @@
                         <div class="skill-level php"></div>
                     </div>
                 </div>
+                <div class="skill-item">
+                    <i class="fab fa-bootstrap"></i>
+                    <h3>Bootstrap</h3>
+                    <div class="skill-bar">
+                        <div class="skill-level php"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -122,11 +146,20 @@
     <section class="socials" id="socials">
         <div class="container">
             <h2>Let's Connect</h2>
+        <div class="email_form">
+            <label for="nameInput">Name:</label>
+            <input type="text" placeholder="Neeraj" id="nameInput">
+            <label for="emailInput">Email:</label>
+            <input type="email" placeholder="example@gmail.com" id="emailInput">
+            <label for="messageInput">Message:</label>
+            <input type="text" placeholder="Feel free to say 'Hi'" id="meassageInput">
+            
+        </div>
             <div class="social-icons">
                 <a href="https://wa.me/917865884738" target="_blank" aria-label="WhatsApp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="https://github.com/NIRAJ-xDS" target="_blank" aria-label="GitHub">
+                <a href="https://github.com/NIRAJ-xD" target="_blank" aria-label="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
                 <a href="mailto:itznirajgour@gmail.com" aria-label="Email">
@@ -142,13 +175,8 @@
 
     <footer>
         <div class="container">
-            <p>© 2025 Niraj Gour. Built with <i class="fas fa-heart"></i> and <i class="fas fa-code"></i></p>
-            <p class="small">Java, CSS & HTML</p>
+            <p>&copy; 2025 Niraj Gour.@ All rights reserved<i class="fas fa-heart"></i> and <i class="fas fa-code"></i></p>
         </div>
     </footer>
-
-    <!-- Add Animate.css for animations -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <script src="script.js"></script>
 </body>
 </html>
