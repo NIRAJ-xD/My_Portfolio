@@ -330,7 +330,8 @@ section {
 .cursor {
     display: inline-block;
     width: 3px;
-    height: 2.4rem;
+    height: 2.8rem;
+    transform: translateY(5px);
     background-color: var(--accent-color);
     margin-left: 4px;
     animation: blink 1s infinite;
