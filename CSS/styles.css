@@ -166,9 +166,10 @@ section {
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 2rem 0;
+    gap: 8rem;
     transition: var(--transition);
 }
 
@@ -189,11 +190,11 @@ section {
 .nav-links ul {
     display: flex;
     list-style: none;
-    gap: 3rem;
+    gap: 5rem;
 }
 
 .nav-links a {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     position: relative;
     padding: 0.5rem 0;
 }
