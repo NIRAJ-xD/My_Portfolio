@@ -1,3 +1,18 @@
+const loader = document.getElementById("preloader");
+
+// Start a timer for minimum 2 seconds
+const minLoaderTime = new Promise(resolve => setTimeout(resolve, 2000));
+
+// Wait for BOTH the page load AND the 2-second timer
+Promise.all([
+  new Promise(resolve => window.addEventListener("load", resolve)),
+  minLoaderTime
+]).then(() => {
+  loader.style.opacity = "0";
+  setTimeout(() => {
+    loader.style.display = "none";
+  }, 500);
+});
 document.addEventListener('DOMContentLoaded', function() {
   // Set current year in footer
   document.getElementById('year').textContent = new Date().getFullYear();
