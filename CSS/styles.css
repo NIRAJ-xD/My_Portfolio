@@ -306,9 +306,11 @@ section {
 }
 
 .profile-image {
-    width: 100%;
+    width: 90%;
     height: auto;
     object-fit: contain;
+    border: var(--accent-color) 4px solid;
+    border-radius: 50%;
     animation: float 6s ease-in-out infinite;
 }
 
